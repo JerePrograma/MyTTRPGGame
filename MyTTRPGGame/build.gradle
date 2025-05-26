@@ -1,0 +1,16 @@
+plugins {
+    id 'base'
+    id 'com.github.johnrengelman.shadow' version '7.1.2' apply false
+}
+
+group = 'com.jereprograma.myttrpg'
+version = '0.1.0'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+    ext {
+        gdxVersion = '1.11.0'
+    }
+}

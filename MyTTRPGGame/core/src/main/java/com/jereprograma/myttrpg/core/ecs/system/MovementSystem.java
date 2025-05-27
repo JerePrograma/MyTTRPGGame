@@ -5,4 +5,5 @@ public class MovementSystem implements EcsSystem {
     public void update(float delta) {
         // vacío: manejaremos por eventos
     }
+
 }

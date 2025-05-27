@@ -3,7 +3,12 @@ package com.jereprograma.myttrpg.core.ecs.system;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.jereprograma.myttrpg.core.GameApp;
 
+/**
+ * Dibuja el grid 2D usando ShapeRenderer.
+ * Ya no usa valores mágicos, toma CELL_SIZE de GameApp.
+ */
 public class GridSystem implements EcsSystem {
     private final ShapeRenderer shapeRenderer;
     private final OrthographicCamera camera;
@@ -23,20 +28,22 @@ public class GridSystem implements EcsSystem {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
 
         // líneas verticales
-        int cellSize = 32;
         for (int x = 0; x <= worldWidth; x++) {
-            float xpos = x * cellSize;
-            shapeRenderer.line(xpos, 0, xpos, worldHeight * cellSize);
+            float xpos = x * GameApp.CELL_SIZE;
+            shapeRenderer.line(xpos, 0, xpos, worldHeight * GameApp.CELL_SIZE);
         }
         // líneas horizontales
         for (int y = 0; y <= worldHeight; y++) {
-            float ypos = y * cellSize;
-            shapeRenderer.line(0, ypos, worldWidth * cellSize, ypos);
+            float ypos = y * GameApp.CELL_SIZE;
+            shapeRenderer.line(0, ypos, worldWidth * GameApp.CELL_SIZE, ypos);
         }
 
         shapeRenderer.end();
     }
 
+    /**
+     * Libera recursos del ShapeRenderer.
+     */
     public void dispose() {
         shapeRenderer.dispose();
     }

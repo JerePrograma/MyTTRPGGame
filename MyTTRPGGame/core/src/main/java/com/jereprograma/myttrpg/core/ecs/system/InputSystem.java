@@ -9,9 +9,16 @@ import com.jereprograma.myttrpg.core.events.EventBus;
  * Lee las flechas del teclado y emite MoveCommand por EventBus.
  */
 public class InputSystem implements EcsSystem {
+    private final ConsoleSystem console;
+
+    public InputSystem(ConsoleSystem console) {
+        this.console = console;
+    }
 
     @Override
     public void update(float delta) {
+        if (console.isVisible()) return;
+
         if (Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
             EventBus.fire(new MoveCommand(MoveCommand.Dir.UP));
         }

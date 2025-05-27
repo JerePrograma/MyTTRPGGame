@@ -2,16 +2,16 @@ package com.jereprograma.myttrpg.core.ecs.system;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -19,37 +19,58 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * Sistema para mostrar y capturar comandos en consola in-game usando Scene2D,
- * con historial navegable con flechas arriba/abajo.
+ * Consola in-game con historial, salida con scroll, toggle de visibilidad y captura exclusiva de input.
  */
 public class ConsoleSystem implements EcsSystem {
     private final Stage stage;
     private final TextField input;
+    private final TextArea consoleOutput;
+    private final ScrollPane outputScroll;
     private final Queue<String> commandQueue = new ArrayDeque<>();
 
     private final List<String> history = new ArrayList<>();
     private int historyCursor = -1;
 
+    private boolean visible = false;
+    private final com.badlogic.gdx.InputProcessor previousProcessor;
+
     public ConsoleSystem(Skin skin, OrthographicCamera camera) {
+        // Crear Stage propio
         this.stage = new Stage(new ScreenViewport(camera));
+        this.previousProcessor = Gdx.input.getInputProcessor();
 
         Table table = new Table(skin);
         table.setFillParent(true);
         table.bottom().left().pad(10);
 
-        this.input = new TextField("", skin);
-        input.setMessageText(">> escribe comando");
+        // 1) Area de salida (read-only) dentro de ScrollPane
+        consoleOutput = new TextArea("", skin);
+        consoleOutput.setDisabled(true);
+        consoleOutput.setPrefRows(8);
 
-        // Listener para manejo de teclas
+        outputScroll = new ScrollPane(consoleOutput, skin);
+        outputScroll.setFadeScrollBars(false);
+        outputScroll.setScrollingDisabled(true, false);
+
+        table.add(outputScroll).width(400f).height(200f).row();
+
+        // 2) Campo de entrada
+        input = new TextField("", skin);
+        input.setMessageText(">> escribe comando");
+        table.add(input).width(400f);
+
+        // 3) Listener de teclas para input
         input.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
                 if (keycode == Input.Keys.ENTER) {
-                    String cmd = input.getText().trim();
-                    if (!cmd.isEmpty()) {
-                        commandQueue.add(cmd);
-                        history.add(cmd);
-                        historyCursor = history.size(); // apunta tras el último
+                    String text = input.getText().trim();
+                    if (!text.isEmpty()) {
+                        // Enviar comando
+                        commandQueue.add(text);
+                        appendOutput(">> " + text);
+                        history.add(text);
+                        historyCursor = history.size();
                         input.setText("");
                     }
                     return true;
@@ -77,34 +98,53 @@ public class ConsoleSystem implements EcsSystem {
             }
         });
 
-        table.add(input).width(400f);
         stage.addActor(table);
+    }
 
-        // Establecer focus y multiplexor
-        InputMultiplexer mux = new InputMultiplexer();
-        mux.addProcessor(stage);
-        InputProcessor prev = Gdx.input.getInputProcessor();
-        if (prev != null) mux.addProcessor(prev);
-        Gdx.input.setInputProcessor(mux);
-        stage.setKeyboardFocus(input);
+    /**
+     * Alterna visibilidad de la consola y gestiona el InputProcessor.
+     */
+    public void toggle() {
+        visible = !visible;
+        if (visible) {
+            Gdx.input.setInputProcessor(stage);
+            stage.setKeyboardFocus(input);
+        } else {
+            Gdx.input.setInputProcessor(previousProcessor);
+        }
+    }
+
+    /**
+     * Añade una línea de texto a la salida y hace scroll al final.
+     */
+    public void appendOutput(String line) {
+        consoleOutput.appendText(line + "\n");
+        outputScroll.layout();
+        outputScroll.setScrollPercentY(1f);
+    }
+
+    /**
+     * Indica si la consola está visible.
+     */
+    public boolean isVisible() {
+        return visible;
     }
 
     @Override
     public void update(float delta) {
-        stage.act(delta);
-        stage.draw();
+        if (visible) {
+            stage.act(delta);
+            stage.draw();
+        }
     }
 
     /**
-     * Si hay comandos en cola devuelve el primero, si no retorna null.
+     * Recupera el siguiente comando ingresado (o null si no hay).
      */
     public String fetchCommand() {
         return commandQueue.poll();
     }
 
-    /**
-     * Liberar recursos de la UI.
-     */
     public void dispose() {
         stage.dispose();
     }

@@ -7,6 +7,7 @@ package com.jereprograma.myttrpg.core.ecs.system;
 public interface EcsSystem {
     /**
      * Se llama cada frame para procesar lógica o render.
+     *
      * @param delta tiempo en segundos desde el último frame
      */
     void update(float delta);

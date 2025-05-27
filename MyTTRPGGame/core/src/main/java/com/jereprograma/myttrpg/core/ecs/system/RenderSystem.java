@@ -14,8 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Sistema que dibuja entidades en pantalla usando un SpriteBatch y cámara ortográfica.
- * Ahora usa AssetManager para obtener Texturas ya cargadas.
+ * Dibuja entidades en pantalla usando el CELL_SIZE de GameApp.
  */
 public class RenderSystem implements EcsSystem {
     private final SpriteBatch batch;
@@ -50,5 +49,9 @@ public class RenderSystem implements EcsSystem {
             }
         }
         batch.end();
+    }
+
+    public void dispose() {
+        // seguir el patrón; aquí no hay recursos propios
     }
 }

@@ -38,7 +38,6 @@ MyTTRPGGame/
 ├── build.gradle           # Gradle multi-módulo + Jacoco
 └── settings.gradle
 ```
-````
 
 - **core/**
 

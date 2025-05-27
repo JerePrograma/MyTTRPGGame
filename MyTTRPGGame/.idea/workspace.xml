@@ -5,16 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88fb116a-0f4e-4a10-9f91-8a17512a3d67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/GameCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/RollGameCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/SpawnGameCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/UnknownGameCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/GameInputSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/core/commands/GameGameCommandParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/MoveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/commands/CommandParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/commands/CommandParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/assets/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/dirt.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/dirt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/grass.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/sand.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/sand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/water.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/water.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/GameCommandParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/DescribeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/DescribeGameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/LoadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/LoadGameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/MoveGameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/RollCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/SaveGameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/SpawnCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/UnknownCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/EntityPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/EntityPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/ConsoleSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/ConsoleSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/InputSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/RenderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/RenderSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/commands/CommandParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/ecs/EntityPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/ecs/EntityPoolTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/DescribeCommandIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/DescribeGameCommandIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/EventBusIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/EventBusIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/MoveCommandIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/MoveGameCommandIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/SaveLoadCommandIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/SaveLoadGameCommandIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/assets/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +116,9 @@
     "Gradle.Build MyTTRPGGame.executor": "Run",
     "Gradle.Build untitled.executor": "Run",
     "Gradle.DescribeCommandIntegrationTest.executor": "Run",
+    "Gradle.EntityPoolTest.executor": "Run",
+    "Gradle.MapGeneratorAtlasTest.allRandomMapRegionsMustExistInAtlas.executor": "Run",
+    "Gradle.MapGeneratorAtlasTest.executor": "Run",
     "Gradle.MapPersistenceServiceTest.executor": "Run",
     "Gradle.MoveCommandIntegrationTest.executor": "Run",
     "Gradle.MyTTRPGGame [dependencies].executor": "Run",
@@ -105,7 +129,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Jerem/Documents/Laburo/MyTTRPGGame/MyTTRPGGame",
+    "last_opened_file_path": "C:/Users/Jerem/Documents/Laburo/MyTTRPGGame/MyTTRPGGame/core/src/main/resources/tiles",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -114,31 +138,21 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.16896552",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jerem\Documents\Laburo\MyTTRPGGame\MyTTRPGGame\core\src\main\resources\tiles" />
       <recent name="D:\laburo\MyTTRPGGame\MyTTRPGGame\core\src\test\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jerem\Documents\Laburo\MyTTRPGGame\MyTTRPGGame\desktop\assets\tiles" />
       <recent name="D:\laburo\MyTTRPGGame\MyTTRPGGame\desktop\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SaveLoadCommandIntegrationTest">
-    <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jereprograma.myttrpg.desktop.DesktopLauncher" />
-      <module name="MyTTRPGGame.desktop.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jereprograma.myttrpg.desktop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.EntityPoolTest">
     <configuration name="DescribeCommandIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -163,7 +177,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MapPersistenceServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EntityPoolTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -176,7 +190,7 @@
           <list>
             <option value=":core:test" />
             <option value="--tests" />
-            <option value="&quot;core.services.MapPersistenceServiceTest&quot;" />
+            <option value="&quot;core.ecs.EntityPoolTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,7 +201,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MoveCommandIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapGeneratorAtlasTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -200,7 +214,31 @@
           <list>
             <option value=":core:test" />
             <option value="--tests" />
-            <option value="&quot;core.events.MoveCommandIntegrationTest&quot;" />
+            <option value="&quot;core.map.MapGeneratorAtlasTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MapGeneratorAtlasTest.allRandomMapRegionsMustExistInAtlas" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":core:test" />
+            <option value="--tests" />
+            <option value="&quot;core.map.MapGeneratorAtlasTest.allRandomMapRegionsMustExistInAtlas&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -237,11 +275,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.EntityPoolTest" />
+        <item itemvalue="Gradle.MapGeneratorAtlasTest.allRandomMapRegionsMustExistInAtlas" />
+        <item itemvalue="Gradle.MapGeneratorAtlasTest" />
         <item itemvalue="Gradle.SaveLoadCommandIntegrationTest" />
         <item itemvalue="Gradle.DescribeCommandIntegrationTest" />
-        <item itemvalue="Gradle.MoveCommandIntegrationTest" />
-        <item itemvalue="Application.DesktopLauncher" />
-        <item itemvalue="Gradle.MapPersistenceServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +306,7 @@
       <workItem from="1748284010463" duration="1950000" />
       <workItem from="1748286801212" duration="434000" />
       <workItem from="1748288714654" duration="9555000" />
-      <workItem from="1748302505680" duration="10480000" />
+      <workItem from="1748302505680" duration="20441000" />
     </task>
     <servers />
   </component>

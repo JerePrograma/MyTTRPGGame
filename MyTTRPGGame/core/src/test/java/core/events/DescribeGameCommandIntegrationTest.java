@@ -1,7 +1,7 @@
 // src/test/java/com/jereprograma/myttrpg/core/events/DescribeCommandIntegrationTest.java
 package core.events;
 
-import com.jereprograma.myttrpg.core.commands.DescribeCommand;
+import com.jereprograma.myttrpg.core.commands.game.DescribeGameCommand;
 import com.jereprograma.myttrpg.core.ecs.Entity;
 import com.jereprograma.myttrpg.core.ecs.EntityPool;
 import com.jereprograma.myttrpg.core.ecs.components.PositionComponent;
@@ -14,7 +14,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DescribeCommandIntegrationTest {
+public class DescribeGameCommandIntegrationTest {
 
     private List<Entity> fakeWorld;
 
@@ -35,7 +35,7 @@ public class DescribeCommandIntegrationTest {
     @Test
     void testDescribeCommandFiresDescribeResultEvent() {
         // Registrar handler como en GameApp
-        EventBus.register(DescribeCommand.class, cmd -> {
+        EventBus.register(DescribeGameCommand.class, cmd -> {
             Entity pl = fakeWorld.get(fakeWorld.size() - 1);
             var pos = pl.getComponent(PositionComponent.class);
             String info = "Jugador en x=" + pos.x() + ", y=" + pos.y();
@@ -47,7 +47,7 @@ public class DescribeCommandIntegrationTest {
         EventBus.register(DescribeResultEvent.class, e -> captured[0] = e.info());
 
         // Disparar comando
-        EventBus.fire(new DescribeCommand(null));
+        EventBus.fire(new DescribeGameCommand(null));
 
         // Verificar
         assertEquals("Jugador en x=4, y=7", captured[0]);

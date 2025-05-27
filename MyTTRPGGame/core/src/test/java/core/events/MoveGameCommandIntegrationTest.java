@@ -1,8 +1,8 @@
 // src/test/java/com/jereprograma/myttrpg/core/events/MoveCommandIntegrationTest.java
 package core.events;
 
-import com.jereprograma.myttrpg.core.commands.MoveCommand;
-import com.jereprograma.myttrpg.core.commands.MoveCommand.Dir;
+import com.jereprograma.myttrpg.core.commands.game.MoveGameCommand;
+import com.jereprograma.myttrpg.core.commands.game.MoveGameCommand.Dir;
 import com.jereprograma.myttrpg.core.ecs.Entity;
 import com.jereprograma.myttrpg.core.ecs.EntityPool;
 import com.jereprograma.myttrpg.core.ecs.components.PositionComponent;
@@ -15,7 +15,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MoveCommandIntegrationTest {
+public class MoveGameCommandIntegrationTest {
 
     @BeforeEach
     void clearEventBusListeners() throws Exception {
@@ -36,7 +36,7 @@ public class MoveCommandIntegrationTest {
         fakeWorld.add(e);
 
         // 2) Registra el handler idéntico al de GameApp.create()
-        EventBus.register(MoveCommand.class, cmd -> {
+        EventBus.register(MoveGameCommand.class, cmd -> {
             Entity pl = fakeWorld.get(fakeWorld.size() - 1);
             var pos = pl.getComponent(PositionComponent.class);
             int x = pos.x(), y = pos.y();
@@ -59,7 +59,7 @@ public class MoveCommandIntegrationTest {
         });
 
         // 4) Disparamos el comando
-        EventBus.fire(new MoveCommand(Dir.UP));
+        EventBus.fire(new MoveGameCommand(Dir.UP));
 
         // 5) Aserciones: original (2,3) → (2,4)
         assertEquals(2, received[0]);

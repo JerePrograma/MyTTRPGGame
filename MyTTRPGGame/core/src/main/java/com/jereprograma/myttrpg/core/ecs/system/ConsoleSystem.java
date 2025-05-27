@@ -60,23 +60,27 @@ public class ConsoleSystem implements EcsSystem {
         table.add(input).width(400f);
 
         // 3) Listener de teclas para input
-        input.addListener(new InputListener() {
+        input.setTextFieldListener(new TextField.TextFieldListener() {
             @Override
-            public boolean keyDown(InputEvent event, int keycode) {
-                if (keycode == Input.Keys.ENTER) {
-                    String text = input.getText().trim();
+            public void keyTyped(TextField textField, char key) {
+                if (key == '\n' || key == '\r') {
+                    String text = textField.getText().trim();
                     if (!text.isEmpty()) {
-                        // Enviar comando
                         commandQueue.add(text);
                         appendOutput(">> " + text);
                         history.add(text);
                         historyCursor = history.size();
-                        input.setText("");
+                        textField.setText("");
                     }
-                    return true;
                 }
+            }
+        });
+        
+        input.addListener(new InputListener() {
+            @Override
+            public boolean keyDown(InputEvent event, int keycode) {
                 if (keycode == Input.Keys.UP) {
-                    if (!history.isEmpty() && historyCursor > 0) {
+                    if (historyCursor > 0) {
                         historyCursor--;
                         input.setText(history.get(historyCursor));
                         input.setCursorPosition(input.getText().length());
@@ -84,7 +88,7 @@ public class ConsoleSystem implements EcsSystem {
                     return true;
                 }
                 if (keycode == Input.Keys.DOWN) {
-                    if (!history.isEmpty() && historyCursor < history.size() - 1) {
+                    if (historyCursor < history.size() - 1) {
                         historyCursor++;
                         input.setText(history.get(historyCursor));
                         input.setCursorPosition(input.getText().length());
@@ -148,4 +152,12 @@ public class ConsoleSystem implements EcsSystem {
     public void dispose() {
         stage.dispose();
     }
+
+    /**
+     * Getter para poder registrar el stage en el multiplexer
+     */
+    public Stage getStage() {
+        return stage;
+    }
+
 }

@@ -20,7 +20,8 @@ repositories {
 dependencies {
     implementation project(':core')
     implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:${gdxVersion}"
-    runtimeOnly   "com.badlogicgames.gdx:gdx-platform:${gdxVersion}:natives-desktop"
+    runtimeOnly "com.badlogicgames.gdx:gdx-platform:${gdxVersion}:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-tools:${gdxVersion}"
 }
 
 application {
@@ -37,4 +38,25 @@ shadowJar {
     archiveBaseName.set('MyTTRPGGame-all')
     archiveVersion.set(version)
     mergeServiceFiles()
+}
+
+tasks.create('packTextures', JavaExec) {
+    group = 'assets'
+    description = 'Empaqueta tiles/*.png en tiles.atlas y tiles.png'
+
+    // Usa runtimeClasspath (resoluble) en vez de implementation
+    classpath = configurations.runtimeClasspath
+
+    // Clase principal de TexturePacker
+    main = 'com.badlogic.gdx.tools.texturepacker.TexturePacker'
+
+    // Si tu Gradle está en la raíz del proyecto:
+    def tilesDir = "$projectDir/assets/tiles"
+
+    // args: <inputDir> <outputDir> <packFileName>
+    args = [
+            tilesDir,
+            tilesDir,
+            'tiles'
+    ]
 }

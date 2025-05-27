@@ -1,5 +1,6 @@
 package com.jereprograma.myttrpg.core.ecs;
 
+import com.badlogic.gdx.Gdx;
 import com.jereprograma.myttrpg.core.ecs.components.Component;
 
 import java.util.Queue;
@@ -17,7 +18,14 @@ public class EntityPool {
     public static Entity borrow() {
         Entity e = pool.poll();
         if (e == null) {
-            return new Entity();
+            e = new Entity();
+            if (Gdx.app != null) {
+                Gdx.app.debug("EntityPool", "borrow(): creada nueva entidad " + e.getId());
+            }
+        } else {
+            if (Gdx.app != null) {
+                Gdx.app.debug("EntityPool", "borrow(): reusando entidad " + e.getId());
+            }
         }
         return e;
     }
@@ -26,17 +34,22 @@ public class EntityPool {
      * Devuelve una entidad al pool, limpiando sus componentes.
      */
     public static void release(Entity entity) {
-        // Remover todos los componentes antes de devolver
+        // Limpiar componentes antes de devolver
         for (Component c : entity.getAllComponents()) {
             entity.removeComponent(c.getClass());
         }
         pool.offer(entity);
+        if (Gdx.app != null) {
+            Gdx.app.debug("EntityPool", "release(): entidad devuelta " + entity.getId() +
+                    " | pool size = " + pool.size());
+        }
     }
 
     /**
      * Tamaño actual del pool (para pruebas/debug).
      */
     public static int size() {
+        // Evitar Gdx.app para no lanzar NPE en tests
         return pool.size();
     }
 }

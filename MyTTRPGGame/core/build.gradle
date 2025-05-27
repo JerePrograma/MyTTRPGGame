@@ -1,11 +1,31 @@
 // core/build.gradle
 plugins {
     id 'java-library'
+    id 'jacoco'
 }
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.10"  // o la versión que quieras usar
+}
+
+tasks.test {
+    // Para que test genere los datos de cobertura
+    finalizedBy tasks.jacocoTestReport
+}
+
+tasks.jacocoTestReport {
+    dependsOn tasks.test
+    reports {
+        html.required = true
+        xml.required = false
+        csv.required = false
+        html.outputLocation = file("$buildDir/reports/jacoco")
     }
 }
 

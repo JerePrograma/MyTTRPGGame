@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="88fb116a-0f4e-4a10-9f91-8a17512a3d67" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/ConsoleSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/ConsoleSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/EcsSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/EcsSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/GridSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/GridSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/InputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/InputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/MovementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/MovementSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/RenderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/RenderSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/MoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/commands/CommandParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/commands/CommandParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/assets/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/dirt.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/dirt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/sand.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/sand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/assets/tiles/water.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/water.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +71,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -80,6 +83,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2xdsZSzwRnAAeRZA0tZZTegoL9d" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,10 +94,13 @@
   "keyToString": {
     "Gradle.Build MyTTRPGGame.executor": "Run",
     "Gradle.Build untitled.executor": "Run",
+    "Gradle.DescribeCommandIntegrationTest.executor": "Run",
     "Gradle.MapPersistenceServiceTest.executor": "Run",
+    "Gradle.MoveCommandIntegrationTest.executor": "Run",
     "Gradle.MyTTRPGGame [dependencies].executor": "Run",
     "Gradle.MyTTRPGGame [test].executor": "Run",
     "Gradle.MyTTRPGGame:desktop [:desktop:com.jereprograma.myttrpg.desktop.DesktopLauncher.main()].executor": "Run",
+    "Gradle.SaveLoadCommandIntegrationTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -116,7 +125,7 @@
       <recent name="D:\laburo\MyTTRPGGame\MyTTRPGGame\desktop\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DesktopLauncher">
+  <component name="RunManager" selected="Gradle.SaveLoadCommandIntegrationTest">
     <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jereprograma.myttrpg.desktop.DesktopLauncher" />
       <module name="MyTTRPGGame.desktop.main" />
@@ -129,6 +138,30 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="DescribeCommandIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":core:test" />
+            <option value="--tests" />
+            <option value="&quot;core.events.DescribeCommandIntegrationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="MapPersistenceServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -154,56 +187,61 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MyTTRPGGame [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MoveCommandIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencies" />
+            <option value=":core:test" />
+            <option value="--tests" />
+            <option value="&quot;core.events.MoveCommandIntegrationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MyTTRPGGame [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SaveLoadCommandIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":core:test" />
+            <option value="--tests" />
+            <option value="&quot;core.events.SaveLoadCommandIntegrationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SaveLoadCommandIntegrationTest" />
+        <item itemvalue="Gradle.DescribeCommandIntegrationTest" />
+        <item itemvalue="Gradle.MoveCommandIntegrationTest" />
         <item itemvalue="Application.DesktopLauncher" />
         <item itemvalue="Gradle.MapPersistenceServiceTest" />
-        <item itemvalue="Gradle.MyTTRPGGame [test]" />
-        <item itemvalue="Gradle.MyTTRPGGame [dependencies]" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +268,7 @@
       <workItem from="1748284010463" duration="1950000" />
       <workItem from="1748286801212" duration="434000" />
       <workItem from="1748288714654" duration="9555000" />
-      <workItem from="1748302505680" duration="3359000" />
+      <workItem from="1748302505680" duration="10480000" />
     </task>
     <servers />
   </component>

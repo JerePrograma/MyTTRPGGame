@@ -1,6 +1,6 @@
 package com.jereprograma.myttrpg.core;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.assets.AssetManager;
@@ -24,6 +24,7 @@ import com.jereprograma.myttrpg.core.ecs.system.*;
 import com.jereprograma.myttrpg.core.editing.CommandManager;
 import com.jereprograma.myttrpg.core.events.EventBus;
 import com.jereprograma.myttrpg.core.map.MapGenerator;
+import com.jereprograma.myttrpg.core.screens.MainMenuScreen;
 import com.jereprograma.myttrpg.core.services.MapPersistenceService;
 import com.jereprograma.myttrpg.core.services.RollService;
 import com.jereprograma.myttrpg.core.events.*;
@@ -35,7 +36,7 @@ import java.util.List;
 /**
  * Clase principal que orquesta los sistemas ECS, input y rendering.
  */
-public class GameApp extends ApplicationAdapter {
+public class GameApp extends Game {
     public static final int CELL_SIZE = 32;
 
     private SpriteBatch batch;
@@ -85,7 +86,7 @@ public class GameApp extends ApplicationAdapter {
         EditInputProcessor editProc = new EditInputProcessor(camera);
         GameInputSystem inputSystem = new GameInputSystem(gameProc, editProc, uiStage);
 
-        // 7) Consola (CREARLA DESPUÉS de setear el multiplexer)
+        // 7) Consola (tras configurar el multiplexer)
         console = new ConsoleSystem(skin, camera);
 
         // 8) MessageLabel para mensajes flotantes
@@ -99,10 +100,11 @@ public class GameApp extends ApplicationAdapter {
         entities.addAll(MapGenerator.randomMap(25, 18, regionNames));
 
         // 10) Registro en bucle de sistemas
+        gameSystems.clear();
         gameSystems.add(gridSystem);
         gameSystems.add(editingSystem);
         gameSystems.add(renderSystem);
-        gameSystems.add(console);   // la consola tiene su propio update/draw
+        gameSystems.add(console);   // para que la consola se actualice y dibuje
 
         // 11) Comandos de juego
         registerGameCommands();
@@ -126,8 +128,17 @@ public class GameApp extends ApplicationAdapter {
         // 14) Capturar ENTER y ESC para toggle de consola
         Gdx.input.setCatchKey(Input.Keys.ENTER, true);
         Gdx.input.setCatchKey(Input.Keys.ESCAPE, true);
-    }
 
+        // 15) Navegación de pantallas: arrancamos en MainMenuScreen
+        StageManager screens = new StageManager(this);
+        screens.setScreen(new MainMenuScreen(
+                screens,
+                skin,
+                gameSystems,
+                inputSystem,
+                console
+        ));
+    }
 
     private void registerGameCommands() {
         EventBus.register(RollGameCommand.class, cmd -> {

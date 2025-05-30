@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88fb116a-0f4e-4a10-9f91-8a17512a3d67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/GameCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/RollGameCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/SpawnGameCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/UnknownGameCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/GameInputSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/core/commands/GameGameCommandParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/GameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/GameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/GameCommandParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/DescribeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/DescribeGameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/LoadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/LoadGameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/MoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/MoveGameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/RollCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/game/SaveGameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/SpawnCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/commands/UnknownCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/EntityPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/EntityPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/ConsoleSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/ConsoleSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/InputSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/RenderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jereprograma/myttrpg/core/ecs/system/RenderSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/commands/CommandParserTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/ecs/EntityPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/ecs/EntityPoolTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/DescribeCommandIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/DescribeGameCommandIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/EventBusIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/EventBusIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/MoveCommandIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/MoveGameCommandIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/core/events/SaveLoadCommandIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/core/events/SaveLoadGameCommandIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/assets/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/assets/tiles/player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +71,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JerePrograma&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JerePrograma/MyTTRPGGame.git&quot;,
+    &quot;accountId&quot;: &quot;8a13bb65-d7cf-4222-a1f3-68b15ea79572&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -111,38 +94,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build MyTTRPGGame.executor": "Run",
-    "Gradle.Build untitled.executor": "Run",
-    "Gradle.DescribeCommandIntegrationTest.executor": "Run",
-    "Gradle.EntityPoolTest.executor": "Run",
-    "Gradle.MapGeneratorAtlasTest.allRandomMapRegionsMustExistInAtlas.executor": "Run",
-    "Gradle.MapGeneratorAtlasTest.executor": "Run",
-    "Gradle.MapPersistenceServiceTest.executor": "Run",
-    "Gradle.MoveCommandIntegrationTest.executor": "Run",
-    "Gradle.MyTTRPGGame [dependencies].executor": "Run",
-    "Gradle.MyTTRPGGame [test].executor": "Run",
-    "Gradle.MyTTRPGGame:desktop [:desktop:com.jereprograma.myttrpg.desktop.DesktopLauncher.main()].executor": "Run",
-    "Gradle.SaveLoadCommandIntegrationTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Jerem/Documents/Laburo/MyTTRPGGame/MyTTRPGGame/core/src/main/resources/tiles",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.16896552",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build MyTTRPGGame.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build untitled.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DescribeCommandIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EntityPoolTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapGeneratorAtlasTest.allRandomMapRegionsMustExistInAtlas.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapGeneratorAtlasTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapPersistenceServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MoveCommandIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MyTTRPGGame [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MyTTRPGGame [test].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MyTTRPGGame:desktop [:desktop:com.jereprograma.myttrpg.desktop.DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SaveLoadCommandIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jerem/Documents/Laburo/MyTTRPGGame/MyTTRPGGame/core/src/main/resources/tiles&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.16896552&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jereprograma.myttrpg.core.ui" />
+      <recent name="com.jereprograma.myttrpg.core.screens" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jerem\Documents\Laburo\MyTTRPGGame\MyTTRPGGame\core\src\main\resources\tiles" />
       <recent name="D:\laburo\MyTTRPGGame\MyTTRPGGame\core\src\test\java" />
@@ -286,8 +273,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -307,6 +294,11 @@
       <workItem from="1748286801212" duration="434000" />
       <workItem from="1748288714654" duration="9555000" />
       <workItem from="1748302505680" duration="20441000" />
+      <workItem from="1748395437529" duration="1915000" />
+      <workItem from="1748533300224" duration="4322000" />
+      <workItem from="1748541830659" duration="1273000" />
+      <workItem from="1748622295178" duration="7000" />
+      <workItem from="1748624125987" duration="2630000" />
     </task>
     <servers />
   </component>
